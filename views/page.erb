@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>API Browser</title>
+		<link href="/public/fuzz.css" media="screen" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div id="general">
+		  <form action="/" method="post">
+		    <div id="login">
+		      Username : <input type="text" value="<%= @presenter.user %>" name="user" /> Password : <input type="password" value="<%= @presenter.password %>" name="password" />
+		    </div>
+		    <div id="args">
+		        <label for="page">url :</label>
+		        <input size="100" type="text" value="<%= @presenter.url %>" name="page" id="page" /> <br />
+		        <div>parameters :</div>
+		        <% 0.upto(@presenter.keys.size - 1).each do |i| %>
+		          <label for="value[<%= i %>]">
+		            <input size="8" type="text" value="<%= @presenter.keys[i] %>" name="key[<%= i %>]" id="key[<%= i %>]" />
+		          </label>
+		          <input size="8" type="text" value="<%= @presenter.values[i] %>" name="value[<%= i %>]" id="value[<%= i %>]" />
+		          <br />
+		        <% end %>
+		        
+		        <label><input size="8" type="text" value="" name="new_key" id="new_key" autofocus="true" /></label>
+		        <input type="text" value="" name="new_value" id="new_value" /> <br />
+		        
+		        <input type="submit" value="Load (json)" name="load" /> <input type="submit" value="Load (xml)" name="load" /> 
+		    </div>
+		  </form>
+		  <div id="payload">
+        <pre>
+<%= @presenter.code %>:
+<%= @presenter.payload %>
+        </pre>
+		  </div>	  
+		</div>
+	</body>
+</html>
+

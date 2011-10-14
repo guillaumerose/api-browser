@@ -1,0 +1,38 @@
+body {
+	margin: 0;
+	padding: 0;	
+}
+
+#general {
+	width: 1230px;
+	margin: 1em auto 1em auto;
+	line-height: 1.8;
+}
+
+#login {
+  margin: 1em auto 1em auto;
+}
+
+
+#args {
+  margin: 1em auto 1em auto;
+}
+
+#payload {
+  margin: 1em auto 1em auto;
+  background-color: #f5f5f5;
+  padding: 1em;
+}
+
+textarea {
+	border: 1px solid #ccc;
+}
+
+pre {
+  margin: 0;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
